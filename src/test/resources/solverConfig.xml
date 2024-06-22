@@ -1,0 +1,26 @@
+<solver>
+    <solutionClass>net.datafaker.optaplanner.DataSolution</solutionClass>
+    <entityClass>net.datafaker.optaplanner.PersonOptaPlanner</entityClass>
+    <scoreDirectorFactory>
+        <easyScoreCalculatorClass>net.datafaker.optaplanner.PersonSplittingScoreCalculator</easyScoreCalculatorClass>
+    </scoreDirectorFactory>
+    <termination>
+        <secondsSpentLimit>3</secondsSpentLimit>
+    </termination>
+    <constructionHeuristic/>
+    <localSearch>
+        <unionMoveSelector>
+            <changeMoveSelector>
+                <entitySelector>
+                    <entityClass>net.datafaker.optaplanner.PersonOptaPlanner</entityClass>
+                </entitySelector>
+                <valueSelector>
+                    <variableName>name</variableName>
+                </valueSelector>
+                <valueSelector>
+                    <variableName>email</variableName>
+                </valueSelector>
+            </changeMoveSelector>
+        </unionMoveSelector>
+    </localSearch>
+</solver>
